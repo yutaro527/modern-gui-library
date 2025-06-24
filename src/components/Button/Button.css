@@ -4,87 +4,89 @@
   align-items: center;
   justify-content: center;
   border: none;
-  border-radius: 8px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--transition-spring);
   user-select: none;
   outline: none;
   box-sizing: border-box;
 }
 
 .modern-button:focus-visible {
-  outline: 2px solid #007AFF;
+  outline: 2px solid var(--primary-500);
   outline-offset: 2px;
 }
 
 /* Sizes */
 .modern-button--small {
-  padding: 8px 16px;
-  font-size: 14px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
   line-height: 1.4;
   min-height: 32px;
 }
 
 .modern-button--medium {
-  padding: 12px 24px;
-  font-size: 16px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-base);
   line-height: 1.5;
   min-height: 40px;
 }
 
 .modern-button--large {
-  padding: 16px 32px;
-  font-size: 18px;
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-lg);
   line-height: 1.5;
   min-height: 48px;
 }
 
 /* Variants */
 .modern-button--primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  box-shadow: 0 4px 14px 0 rgba(102, 126, 234, 0.25);
+  background: var(--primary-500);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-md);
 }
 
 .modern-button--primary:hover:not(:disabled) {
+  background: var(--primary-600);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.35);
+  box-shadow: var(--shadow-lg);
 }
 
 .modern-button--secondary {
-  background: #f8f9fa;
-  color: #495057;
-  border: 1px solid #dee2e6;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-medium);
 }
 
 .modern-button--secondary:hover:not(:disabled) {
-  background: #e9ecef;
-  border-color: #adb5bd;
+  background: var(--bg-tertiary);
+  border-color: var(--border-dark);
 }
 
 .modern-button--danger {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
-  color: white;
-  box-shadow: 0 4px 14px 0 rgba(255, 107, 107, 0.25);
+  background: var(--danger-500);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-md);
 }
 
 .modern-button--danger:hover:not(:disabled) {
+  background: var(--danger-600);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.35);
+  box-shadow: var(--shadow-lg);
 }
 
 .modern-button--outline {
   background: transparent;
-  color: #667eea;
-  border: 2px solid #667eea;
+  color: var(--primary-500);
+  border: 2px solid var(--primary-500);
 }
 
 .modern-button--outline:hover:not(:disabled) {
-  background: #667eea;
-  color: white;
+  background: var(--primary-500);
+  color: var(--text-inverse);
 }
 
 /* States */
