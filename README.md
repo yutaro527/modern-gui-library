@@ -107,6 +107,8 @@ npm run ladle
 
 ブラウザで `http://localhost:61000` にアクセスすると、全てのコンポーネントを確認できます。
 
+**オンラインでも確認可能**: [https://yutaro527.github.io/modern-gui-library/](https://yutaro527.github.io/modern-gui-library/)
+
 ### Ladleのコマンド
 
 ```bash
