@@ -1,0 +1,92 @@
+.modern-toggle__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modern-toggle__switch {
+  position: relative;
+  display: inline-block;
+  background-color: #d1d5db;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modern-toggle__switch--small {
+  width: 32px;
+  height: 18px;
+}
+
+.modern-toggle__switch--medium {
+  width: 44px;
+  height: 24px;
+}
+
+.modern-toggle__switch--large {
+  width: 56px;
+  height: 32px;
+}
+
+.modern-toggle__switch--checked {
+  background-color: #3b82f6;
+}
+
+.modern-toggle__switch--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.modern-toggle__switch:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.modern-toggle__thumb {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  top: 2px;
+  left: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.modern-toggle__switch--small .modern-toggle__thumb {
+  width: 14px;
+  height: 14px;
+}
+
+.modern-toggle__switch--medium .modern-toggle__thumb {
+  width: 20px;
+  height: 20px;
+}
+
+.modern-toggle__switch--large .modern-toggle__thumb {
+  width: 28px;
+  height: 28px;
+}
+
+.modern-toggle__switch--checked.modern-toggle__switch--small .modern-toggle__thumb {
+  transform: translateX(14px);
+}
+
+.modern-toggle__switch--checked.modern-toggle__switch--medium .modern-toggle__thumb {
+  transform: translateX(20px);
+}
+
+.modern-toggle__switch--checked.modern-toggle__switch--large .modern-toggle__thumb {
+  transform: translateX(24px);
+}
+
+.modern-toggle__label {
+  font-size: 0.875rem;
+  color: #374151;
+  user-select: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .modern-toggle__label {
+    color: #d1d5db;
+  }
+}

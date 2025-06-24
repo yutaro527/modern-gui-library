@@ -1,0 +1,76 @@
+.modern-card {
+  background: white;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  position: relative;
+  border: none;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+}
+
+/* Variants */
+.modern-card--elevation {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.modern-card--outlined {
+  border: 1px solid #e5e7eb;
+  box-shadow: none;
+}
+
+/* Padding */
+.modern-card--padding-none {
+  padding: 0;
+}
+
+.modern-card--padding-small {
+  padding: 12px;
+}
+
+.modern-card--padding-medium {
+  padding: 16px;
+}
+
+.modern-card--padding-large {
+  padding: 24px;
+}
+
+/* Interactive States */
+.modern-card--clickable {
+  cursor: pointer;
+}
+
+.modern-card--hover:hover {
+  transform: translateY(-2px);
+}
+
+.modern-card--elevation.modern-card--hover:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.modern-card--outlined.modern-card--hover:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.modern-card--clickable:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .modern-card {
+    background: #1f2937;
+    color: #f9fafb;
+  }
+  
+  .modern-card--outlined {
+    border-color: #374151;
+  }
+  
+  .modern-card--outlined.modern-card--hover:hover {
+    border-color: #4b5563;
+  }
+}
