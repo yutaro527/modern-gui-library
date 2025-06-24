@@ -4,10 +4,20 @@ TypeScriptで構築された再利用可能なReactコンポーネントライ�
 
 ## 特徴
 
-- **Buttonコンポーネント**: 複数のバリエーション、サイズ、ローディング状態を持つモダンなボタン
-- **Slideshowコンポーネント**: 自動再生、ナビゲーション、キーボード操作に対応した高機能スライドショー
-- **TypeScript完全対応**: 完全な型定義が含まれており、型安全な開発が可能
-- **モダンCSS**: 美しくレスポンシブなスタイリング
+### 🎯 豊富なコンポーネント
+- **Button**: 複数のバリエーション、サイズ、ローディング状態
+- **Modal**: アクセシビリティ対応の高機能モーダルダイアログ
+- **Input**: バリデーション・アイコン対応の入力フィールド
+- **Card**: 汎用的なコンテナコンポーネント
+- **Toggle**: モダンなスイッチ・トグルボタン
+- **Slideshow**: 自動再生、ナビゲーション、キーボード操作対応
+- **Tooltip**: 4方向対応のツールチップ
+
+### 💎 開発体験
+- **TypeScript完全対応**: 完全な型定義で型安全な開発
+- **アクセシビリティ準拠**: ARIA属性とキーボード操作に対応
+- **レスポンシブデザイン**: 全デバイスで美しく表示
+- **ダークモード対応**: 自動でダークテーマに対応
 - **軽量・高速**: 最小限の依存関係で高いパフォーマンス
 
 ## インストール
@@ -16,74 +26,53 @@ TypeScriptで構築された再利用可能なReactコンポーネントライ�
 npm install modern-gui-library
 ```
 
-## 使い方
-
-### Buttonコンポーネント
+## クイックスタート
 
 ```tsx
-import { Button } from 'modern-gui-library';
+import { Button, Modal, Input, Card } from 'modern-gui-library';
+import { useState } from 'react';
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div>
-      <Button variant="primary" size="medium">
-        クリックしてください
-      </Button>
-      <Button variant="secondary" loading>
-        読み込み中...
-      </Button>
+      <Card>
+        <h2>Modern GUI Library</h2>
+        <p>美しく使いやすいコンポーネントライブラリ</p>
+        
+        <Button onClick={() => setIsModalOpen(true)}>
+          モーダルを開く
+        </Button>
+      </Card>
+
+      <Modal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)}
+        title="お問い合わせ"
+      >
+        <Input 
+          label="お名前" 
+          placeholder="名前を入力してください"
+          required 
+        />
+        <Input 
+          label="メールアドレス"
+          type="email" 
+          placeholder="example@email.com"
+          required 
+        />
+      </Modal>
     </div>
   );
 }
 ```
 
-**プロパティ:**
-- `variant`: ボタンの種類 ('primary' | 'secondary' | 'danger' | 'outline')
-- `size`: サイズ ('small' | 'medium' | 'large')
-- `disabled`: 無効状態 (boolean)
-- `loading`: ローディング状態 (boolean)
-- `onClick`: クリックハンドラー
-- `type`: ボタンタイプ ('button' | 'submit' | 'reset')
+## 📚 ドキュメント
 
-### Slideshowコンポーネント
-
-```tsx
-import { Slideshow } from 'modern-gui-library';
-
-const slides = [
-  {
-    id: 1,
-    image: '/image1.jpg',
-    title: 'スライド 1',
-    description: 'スライド1の説明文です'
-  },
-  {
-    id: 2,
-    content: <div>カスタムコンテンツ</div>
-  }
-];
-
-function App() {
-  return (
-    <Slideshow
-      slides={slides}
-      autoPlay={true}
-      interval={3000}
-      showDots={true}
-      showArrows={true}
-    />
-  );
-}
-```
-
-**プロパティ:**
-- `slides`: スライドオブジェクトの配列
-- `autoPlay`: 自動再生を有効にする (デフォルト: false)
-- `interval`: 自動再生の間隔（ミリ秒） (デフォルト: 3000)
-- `showDots`: ナビゲーションドットを表示 (デフォルト: true)
-- `showArrows`: ナビゲーション矢印を表示 (デフォルト: true)
-- `infinite`: 無限ループを有効にする (デフォルト: true)
-- `onSlideChange`: スライド変更時のコールバック
+- **[コンポーネントガイド](docs/components.md)** - 各コンポーネントの詳細な使用方法
+- **[開発ガイド](CONTRIBUTING.md)** - コントリビューション方法
+- **[命名規則](docs/naming-conventions.md)** - プロジェクトの規約
 
 ## コンポーネントの確認・開発
 
