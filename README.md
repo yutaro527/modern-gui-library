@@ -84,25 +84,85 @@ function App() {
 - `infinite`: Enable infinite loop (default: true)
 - `onSlideChange`: Callback when slide changes
 
-## Development
+## コンポーネントの確認・開発
+
+このライブラリではLadleを使用してコンポーネントを一元管理・表示できます。
+
+### Ladleとは
+
+LadleはStorybookの軽量・高速な代替ツールです。Viteベースで動作し、コンポーネントの開発・テスト・ドキュメント化を効率的に行えます。
+
+### Ladleのセットアップ
+
+既にセットアップ済みです。以下のコマンドで開始できます：
 
 ```bash
-# Install dependencies
+# 依存関係をインストール
 npm install
 
-# Build the library
+# Ladleを起動（開発サーバー）
+npm run ladle
+```
+
+ブラウザで `http://localhost:61000` にアクセスすると、全てのコンポーネントを確認できます。
+
+### Ladleのコマンド
+
+```bash
+# 開発モードでLadleを起動
+npm run ladle
+
+# 本番用ビルド（静的ファイル生成）
+npm run ladle:build
+```
+
+### ストーリーの作成方法
+
+各コンポーネントに対して `.stories.tsx` ファイルを作成します：
+
+```tsx
+// src/components/YourComponent/YourComponent.stories.tsx
+import type { Story } from '@ladle/react';
+import { YourComponent, YourComponentProps } from './YourComponent';
+
+export const Default: Story<YourComponentProps> = () => (
+  <YourComponent>デフォルト</YourComponent>
+);
+
+export const Variant: Story<YourComponentProps> = () => (
+  <YourComponent variant="special">特別なバリエーション</YourComponent>
+);
+```
+
+### Ladleの特徴
+
+- **高速**: Viteベースで瞬時にリロード
+- **軽量**: Storybookより軽量で設定が簡単
+- **TypeScript完全サポート**: 型安全なストーリー作成
+- **直感的なUI**: シンプルで使いやすいインターフェース
+
+## 開発コマンド
+
+```bash
+# 依存関係をインストール
+npm install
+
+# TypeScriptライブラリをビルド
 npm run build
 
-# Development mode with watch
+# TypeScript開発モード（ファイル監視）
 npm run dev
 
-# Run tests
+# Ladleでコンポーネントを確認
+npm run ladle
+
+# テスト実行
 npm run test
 
-# Lint code
+# コードリント
 npm run lint
 
-# Type check
+# 型チェック
 npm run typecheck
 ```
 
