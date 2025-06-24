@@ -137,7 +137,10 @@ export const TwoSlides: Story<SlideshowProps> = () => (
 export const WithCallback: Story<SlideshowProps> = () => (
   <Slideshow 
     slides={sampleSlides}
-    onSlideChange={(index) => console.log(`スライドが ${index + 1} に変更されました`)}
+    onSlideChange={(index) => {
+      // eslint-disable-next-line no-console
+      console.log(`スライドが ${index + 1} に変更されました`);
+    }}
   />
 );
 
