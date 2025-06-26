@@ -19,7 +19,7 @@ export interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
-  defaultTheme = 'light',
+  defaultTheme = 'blue',
   storageKey = 'modern-gui-theme'
 }) => {
   const availableThemes: ThemeName[] = ['light', 'dark', 'blue', 'green', 'purple', 'orange'];
