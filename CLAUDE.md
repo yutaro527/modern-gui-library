@@ -52,11 +52,14 @@ Modern GUI Library - TypeScriptサポート付きのReactコンポーネント�
 - `docs/naming-conventions.md`の命名規則を厳密に遵守
 
 ### Git ブランチ運用（docs/naming-conventions.mdに準拠）
+- **🚫 重要**: mainブランチへの直接プッシュは絶対禁止
+- **必須フロー**: 必ずプルリクエスト経由でのマージ
 - **ブランチ命名**: `<type>/<short-description>` 形式
   - feature/, fix/, docs/, refactor/, test/, chore/, style/, perf/
 - **コミットメッセージ**: `<type>: <summary>` 形式（日本語）
 - **mainブランチ**: 常にリリース可能な状態を維持
 - **PRマージ前**: 必ずlint/typecheckを実行
+- **開発時**: 新しいブランチ作成 → 実装 → PR作成 → レビュー → マージ
 
 ### ドキュメント作成
 - README.mdやその他のドキュメントは日本語で作成

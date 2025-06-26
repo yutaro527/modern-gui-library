@@ -173,11 +173,17 @@ npm run typecheck
 
 ### コントリビューション
 
+**⚠️ 重要: mainブランチへの直接プッシュは禁止されています**
+
+**必須の開発フロー:**
 1. このリポジトリをフォーク
 2. 機能ブランチを作成 (`git checkout -b feature/amazing-feature`)
-3. 変更をコミット (`git commit -m 'Add some amazing feature'`)
+3. 変更をコミット (`git commit -m 'feat: 素晴らしい機能を追加'`)
 4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
-5. プルリクエストを作成
+5. **プルリクエストを作成** （直接mainにマージしない）
+6. コードレビュー完了後にマージ
+
+詳細は[コントリビューションガイド](CONTRIBUTING.md)を参照してください。
 
 ### ライセンス
 
