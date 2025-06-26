@@ -1,0 +1,36 @@
+name: 品質チェック
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: リポジトリをチェックアウト
+      uses: actions/checkout@v4
+
+    - name: Node.jsをセットアップ
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: 依存関係をインストール
+      run: npm ci
+
+    - name: 型チェックを実行
+      run: npm run typecheck
+
+    - name: リントを実行
+      run: npm run lint
+
+    - name: テストを実行
+      run: npm test
+
+    - name: ライブラリをビルド
+      run: npm run build
