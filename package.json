@@ -1,5 +1,5 @@
 {
-  "name": "modern-gui-library",
+  "name": "@yutaro527/modern-gui-library",
   "version": "1.0.0",
   "description": "A modern GUI library with reusable components like slideshows, buttons, and more",
   "main": "dist/index.js",
@@ -11,7 +11,9 @@
     "ladle:build": "ladle build",
     "test": "jest",
     "lint": "eslint src --ext .ts,.tsx",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm run lint && npm run typecheck",
+    "prepare": "npm run build"
   },
   "keywords": [
     "ui",
@@ -40,6 +42,15 @@
   },
   "files": [
     "dist",
-    "README.md"
-  ]
+    "README.md",
+    "src/theme/themes.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yutaro527/modern-gui-library.git"
+  },
+  "homepage": "https://yutaro527.github.io/modern-gui-library/",
+  "publishConfig": {
+    "access": "public"
+  }
 }
