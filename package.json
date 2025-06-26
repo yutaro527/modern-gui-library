@@ -9,7 +9,7 @@
     "dev": "tsc --watch",
     "ladle": "ladle serve",
     "ladle:build": "ladle build",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "lint": "eslint src --ext .ts,.tsx",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build && npm run lint && npm run typecheck",
